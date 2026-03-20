@@ -1,2 +1,316 @@
-# My-ai
-My AI generated website for all
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>A.A Editing - AI Creative Studio</title>
+  <meta name="description" content="Professional AI Editing Services: AI Photo Editing, 3D Logos, YouTube Thumbnails, AI Videos and Creative Digital Solutions."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root{
+      --bg:#0a0b0f;
+      --card:#0f1117;
+      --muted:#9aa4b2;
+      --text:#eaf1ff;
+      --neon:#19f9d8;
+      --neon2:#7c5cff;
+      --accent:#10b981;
+      --ring: 0 0 40px rgba(25,249,216,.25), 0 0 80px rgba(124,92,255,.15);
+    }
+    html,body{background:var(--bg); color:var(--text); font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;}
+    .container{max-width:1200px}
+    .glass{background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02)); border:1px solid rgba(255,255,255,.06); backdrop-filter: blur(10px)}
+    .neon-text{background: linear-gradient(90deg,var(--neon),var(--neon2)); -webkit-background-clip:text; background-clip:text; color:transparent}
+    .btn-primary{position:relative; overflow:hidden}
+    .btn-primary::after{content:""; position:absolute; inset:-1px; background: radial-gradient(120px 120px at var(--x,50%) var(--y,50%), rgba(25,249,216,.25), transparent 60%); transition:.15s}
+    .btn-outline{border:1px solid rgba(255,255,255,.12)}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.01)); border:1px solid rgba(255,255,255,.06); transition:transform .35s ease, border-color .3s ease, box-shadow .35s ease}
+    .card:hover{transform: translateY(-6px); border-color: rgba(25,249,216,.35); box-shadow: 0 10px 40px rgba(25,249,216,.08), 0 12px 60px rgba(124,92,255,.06)}
+    .grid-auto{display:grid; grid-template-columns:repeat(12,1fr); gap:1rem}
+    .hero-gradient{position:absolute; inset: -20% -10% auto -10%; height: 70vh; z-index:-1; filter: blur(60px); opacity:.6; background:
+      radial-gradient(40% 40% at 20% 30%, rgba(25,249,216,.25), transparent 60%),
+      radial-gradient(45% 45% at 70% 20%, rgba(124,92,255,.25), transparent 60%),
+      radial-gradient(35% 35% at 60% 75%, rgba(16,185,129,.20), transparent 60%)}
+    .section{scroll-margin-top:100px}
+    .badge{border:1px solid rgba(255,255,255,.12); background: rgba(255,255,255,.03)}
+    .shadow-neon{box-shadow: var(--ring)}
+    .divider{height:1px; background:linear-gradient(90deg,transparent, rgba(255,255,255,.08), transparent)}
+    .portfolio-item{position:relative; overflow:hidden; border-radius:14px; border:1px solid rgba(255,255,255,.06)}
+    .portfolio-item img{transition: transform .8s ease, filter .8s ease}
+    .portfolio-item:hover img{transform: scale(1.06); filter: saturate(1.2)}
+    .portfolio-overlay{position:absolute; inset:0; background: linear-gradient(180deg, transparent, rgba(0,0,0,.45)); opacity:0; transition:.35s}
+    .portfolio-item:hover .portfolio-overlay{opacity:1}
+    .tag{font-size:.75rem; padding:.25rem .6rem; border-radius:999px; background:rgba(25,249,216,.08); border:1px solid rgba(25,249,216,.25); color:#b6fff3}
+    .input{background:#0b0d12; border:1px solid rgba(255,255,255,.08); border-radius:12px; color:var(--text); padding:.9rem 1rem; outline:none; transition:border-color .2s, box-shadow .2s}
+    .input:focus{border-color: rgba(25,249,216,.5); box-shadow:0 0 0 4px rgba(25,249,216,.12)}
+    .whatsapp-btn{background: linear-gradient(90deg,#25d366,#128c7e);}
+    .link{color:#b7c3d4}
+    .link:hover{color:#eaf1ff}
+    @media (max-width: 640px){
+      .grid-auto{grid-template-columns: 1fr}
+    }
+  </style>
+</head>
+<body>
+  <header class="sticky top-0 z-50">
+    <div class="hero-gradient"></div>
+    <div class="backdrop-blur-xl glass">
+      <div class="container mx-auto px-6 py-4 flex items-center justify-between">
+        <a href="#" class="flex items-center gap-3">
+          <div class="h-9 w-9 rounded-xl shadow-neon flex items-center justify-center" style="background: radial-gradient(80% 80% at 50% 40%, rgba(25,249,216,.25), rgba(124,92,255,.18)); border:1px solid rgba(255,255,255,.12)">
+            <span class="font-extrabold text-lg neon-text">A</span>
+          </div>
+          <div class="leading-tight">
+            <div class="font-semibold">A.A Editing</div>
+            <div class="text-xs text-[var(--muted)]">AI Creative Studio</div>
+          </div>
+        </a>
+        <nav class="hidden md:flex items-center gap-6">
+          <a href="#about" class="link">About</a>
+          <a href="#services" class="link">Services</a>
+          <a href="#portfolio" class="link">Portfolio</a>
+          <a href="#contact" class="link">Contact</a>
+        </nav>
+        <a href="https://wa.me/923405200748" target="_blank" class="hidden sm:inline-flex items-center gap-2 text-sm px-4 py-2 rounded-lg whatsapp-btn text-white font-medium shadow-lg shadow-emerald-900/20 hover:scale-[1.02] transition">
+          <span>Contact on WhatsApp</span>
+        </a>
+        <button id="menuBtn" class="md:hidden p-2 rounded-lg btn-outline" aria-label="Open menu">
+          <svg width="22" height="22" fill="none" stroke="#eaf1ff" stroke-width="2"><path d="M3 6h16M3 11h16M3 16h16"/></svg>
+        </button>
+      </div>
+      <div id="mobileMenu" class="md:hidden hidden border-t border-white/10">
+        <div class="container mx-auto px-6 py-4 flex flex-col gap-3">
+          <a href="#about" class="link">About</a>
+          <a href="#services" class="link">Services</a>
+          <a href="#portfolio" class="link">Portfolio</a>
+          <a href="#contact" class="link">Contact</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="relative overflow-hidden">
+      <div class="container mx-auto px-6 pt-16 pb-20 lg:pt-24 lg:pb-28">
+        <div class="grid md:grid-cols-2 gap-10 items-center">
+          <div>
+            <span class="badge px-3 py-1 rounded-full text-xs tracking-wide text-[var(--muted)]">Modern minimal dark theme with neon highlights</span>
+            <h1 class="mt-5 text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight">
+              Professional <span class="neon-text">AI Editing</span> Services
+            </h1>
+            <p class="mt-4 text-[var(--muted)] text-lg">AI Photo Editing, 3D Logos, YouTube Thumbnails, AI Videos and Creative Digital Solutions</p>
+            <div class="mt-8 flex flex-col sm:flex-row gap-4">
+              <a href="https://wa.me/923405200748" target="_blank" class="btn-primary whatsapp-btn text-white px-6 py-3 rounded-xl font-semibold shadow-lg shadow-emerald-900/30 hover:-translate-y-0.5 transition will-change-transform">Contact on WhatsApp</a>
+              <a href="#portfolio" class="btn-outline px-6 py-3 rounded-xl font-semibold text-white/90 hover:text-white transition">View Portfolio</a>
+            </div>
+            <div class="mt-8 flex items-center gap-4 text-sm text-[var(--muted)]">
+              <span class="tag">AI Photo</span>
+              <span class="tag">3D Logo</span>
+              <span class="tag">Thumbnails</span>
+              <span class="tag">AI Videos</span>
+            </div>
+          </div>
+          <div class="relative">
+            <div class="absolute -inset-6 rounded-3xl shadow-neon opacity-70"></div>
+            <div class="glass rounded-3xl p-2">
+              <div class="rounded-2xl overflow-hidden portfolio-item">
+                <img src="https://images.unsplash.com/photo-1549880338-65ddcdfd017b?q=80&w=1400&auto=format&fit=crop" alt="AI Creative Montage" class="w-full h-[320px] sm:h-[420px] object-cover"/>
+                <div class="portfolio-overlay"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-5 flex items-end justify-between">
+                  <div>
+                    <div class="text-sm text-white/80">Sample Showcase</div>
+                    <div class="font-semibold text-white text-xl">AI Creative Visuals</div>
+                  </div>
+                  <div class="tag">Live Preview</div>
+                </div>
+              </div>
+            </div>
+            <div class="absolute -bottom-6 -left-6 glass rounded-2xl px-4 py-3 text-xs text-[var(--muted)] hidden sm:flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full" style="background: var(--neon); box-shadow:0 0 10px var(--neon)"></span>
+              Available for projects
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="divider"></div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="container mx-auto px-6 py-16 lg:py-20">
+        <div class="grid md:grid-cols-2 gap-10 items-start">
+          <div class="space-y-4">
+            <h2 class="text-3xl sm:text-4xl font-bold">About Me</h2>
+            <p class="text-[var(--muted)] leading-relaxed">Welcome to A.A Editing. I create professional AI based digital content including photo editing, 3D logo design, YouTube thumbnails, cinematic AI videos and creative digital visuals. My goal is to provide high quality AI editing services for creators, YouTubers and businesses.</p>
+            <div class="flex gap-3 flex-wrap">
+              <span class="badge px-3 py-1 rounded-full text-xs">Fast Delivery</span>
+              <span class="badge px-3 py-1 rounded-full text-xs">High Quality</span>
+              <span class="badge px-3 py-1 rounded-full text-xs">AI Powered</span>
+              <span class="badge px-3 py-1 rounded-full text-xs">Revisions Included</span>
+            </div>
+          </div>
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div class="card rounded-2xl p-5">
+              <div class="text-sm text-[var(--muted)]">Experience</div>
+              <div class="text-3xl font-extrabold mt-1">3+ yrs</div>
+              <div class="mt-2 text-sm">Creative AI editing & design</div>
+            </div>
+            <div class="card rounded-2xl p-5">
+              <div class="text-sm text-[var(--muted)]">Projects</div>
+              <div class="text-3xl font-extrabold mt-1">120+</div>
+              <div class="mt-2 text-sm">Delivered to clients</div>
+            </div>
+            <div class="card rounded-2xl p-5">
+              <div class="text-sm text-[var(--muted)]">Avg. Delivery</div>
+              <div class="text-3xl font-extrabold mt-1">24-72h</div>
+              <div class="mt-2 text-sm">Depending on scope</div>
+            </div>
+            <div class="card rounded-2xl p-5">
+              <div class="text-sm text-[var(--muted)]">Satisfaction</div>
+              <div class="text-3xl font-extrabold mt-1">98%</div>
+              <div class="mt-2 text-sm">Client rating</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="divider"></div>
+    </section>
+
+    <section id="services" class="section">
+      <div class="container mx-auto px-6 py-16 lg:py-20">
+        <div class="flex items-end justify-between gap-6 mb-8">
+          <div>
+            <h2 class="text-3xl sm:text-4xl font-bold">Services</h2>
+            <p class="text-[var(--muted)] mt-2">Creative, AI-powered solutions tailored for content creators and brands.</p>
+          </div>
+          <a href="mailto:Ahsanayax535@gmail.com" class="hidden sm:flex btn-outline px-4 py-2 rounded-lg items-center gap-2">
+            <svg width="18" height="18" fill="none" stroke="#b7c3d4" stroke-width="1.8"><path d="M3 5h12a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Zm0 0 8 6 8-6"/></svg>
+            <span>Get a Quote</span>
+          </a>
+        </div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="card rounded-2xl p-6">
+            <div class="flex items-center gap-3">
+              <div class="h-10 w-10 rounded-xl flex items-center justify-center" style="background:rgba(25,249,216,.12); border:1px solid rgba(25,249,216,.35)">
+                <svg width="22" height="22" fill="none" stroke="#19f9d8" stroke-width="1.8"><path d="M3 4h18v14H3z"/><path d="M3 12h18M8 21h8"/></svg>
+              </div>
+              <h3 class="font-semibold text-lg">AI Photo Editing</h3>
+            </div>
+            <p class="mt-3 text-[var(--muted)]">Professional AI photo enhancement, background change, color grading and creative effects.</p>
+          </div>
+          <div class="card rounded-2xl p-6">
+            <div class="flex items-center gap-3">
+              <div class="h-10 w-10 rounded-xl flex items-center justify-center" style="background:rgba(124,92,255,.12); border:1px solid rgba(124,92,255,.35)">
+                <svg width="22" height="22" fill="none" stroke="#7c5cff" stroke-width="1.8"><path d="M12 3l8 5v6l-8 5-8-5V8z"/><circle cx="12" cy="12" r="3"/></svg>
+              </div>
+              <h3 class="font-semibold text-lg">3D Logo Design</h3>
+            </div>
+            <p class="mt-3 text-[var(--muted)]">Modern 3D logo design for brands, YouTube channels and businesses.</p>
+          </div>
+          <div class="card rounded-2xl p-6">
+            <div class="flex items-center gap-3">
+              <div class="h-10 w-10 rounded-xl flex items-center justify-center" style="background:rgba(16,185,129,.12); border:1px solid rgba(16,185,129,.35)">
+                <svg width="22" height="22" fill="none" stroke="#10b981" stroke-width="1.8"><path d="M4 5h16v12H4z"/><path d="M4 9h16M8 13h6"/></svg>
+              </div>
+              <h3 class="font-semibold text-lg">YouTube Thumbnail Design</h3>
+            </div>
+            <p class="mt-3 text-[var(--muted)]">High CTR YouTube thumbnails designed with AI and professional editing.</p>
+          </div>
+          <div class="card rounded-2xl p-6">
+            <div class="flex items-center gap-3">
+              <div class="h-10 w-10 rounded-xl flex items-center justify-center" style="background:rgba(59,130,246,.12); border:1px solid rgba(59,130,246,.35)">
+                <svg width="22" height="22" fill="none" stroke="#3b82f6" stroke-width="1.8"><path d="M3 5l16 6-16 6V5z"/><path d="M21 5v12"/></svg>
+              </div>
+              <h3 class="font-semibold text-lg">AI Video Creation</h3>
+            </div>
+            <p class="mt-3 text-[var(--muted)]">Cinematic AI generated videos, reels and shorts for social media.</p>
+          </div>
+          <div class="card rounded-2xl p-6">
+            <div class="flex items-center gap-3">
+              <div class="h-10 w-10 rounded-xl flex items-center justify-center" style="background:rgba(234,179,8,.12); border:1px solid rgba(234,179,8,.35)">
+                <svg width="22" height="22" fill="none" stroke="#eab308" stroke-width="1.8"><path d="M12 3v6l4 2-4 2v6M4 7l8-4 8 4"/></svg>
+              </div>
+              <h3 class="font-semibold text-lg">AI Editing Knowledge</h3>
+            </div>
+            <p class="mt-3 text-[var(--muted)]">Guides and knowledge about AI tools for photo, video and graphic editing.</p>
+          </div>
+          <div class="card rounded-2xl p-6 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-3">
+                <div class="h-10 w-10 rounded-xl flex items-center justify-center" style="background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.2)">
+                  <svg width="22" height="22" fill="none" stroke="#eaf1ff" stroke-width="1.8"><path d="M4 6h16M4 12h10M4 18h7"/></svg>
+                </div>
+                <h3 class="font-semibold text-lg">Custom Requests</h3>
+              </div>
+              <p class="mt-3 text-[var(--muted)]">Need something unique? Get a tailored solution for your brand or channel.</p>
+            </div>
+            <a href="#contact" class="mt-5 inline-flex items-center gap-2 text-sm text-white hover:underline">
+              Start a brief
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 8h8M8 4l4 4-4 4"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="divider"></div>
+    </section>
+
+    <section id="portfolio" class="section">
+      <div class="container mx-auto px-6 py-16 lg:py-20">
+        <div class="flex items-end justify-between gap-6 mb-8">
+          <div>
+            <h2 class="text-3xl sm:text-4xl font-bold">My Work Portfolio</h2>
+            <p class="text-[var(--muted)] mt-2">Showcase of my best AI photo edits, logos, thumbnails and videos.</p>
+          </div>
+          <div class="hidden sm:flex items-center gap-2">
+            <button class="badge px-3 py-1 rounded-full text-xs filter-btn" data-filter="all">All</button>
+            <button class="badge px-3 py-1 rounded-full text-xs filter-btn" data-filter="photo">Photo</button>
+            <button class="badge px-3 py-1 rounded-full text-xs filter-btn" data-filter="logo">Logo</button>
+            <button class="badge px-3 py-1 rounded-full text-xs filter-btn" data-filter="thumb">Thumbnails</button>
+            <button class="badge px-3 py-1 rounded-full text-xs filter-btn" data-filter="video">Video</button>
+          </div>
+        </div>
+        <div id="portfolioGrid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <a class="portfolio-item group" data-cat="photo" href="#" aria-label="AI Portrait Edit">
+            <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?q=80&w=1200&auto=format&fit=crop" alt="AI Photo Edit" class="w-full h-64 object-cover"/>
+            <div class="portfolio-overlay"></div>
+            <div class="absolute bottom-0 left-0 right-0 p-4">
+              <div class="flex items-center justify-between">
+                <div class="font-semibold">AI Portrait Edit</div>
+                <span class="tag">Photo</span>
+              </div>
+            </div>
+          </a>
+          <a class="portfolio-item group" data-cat="logo" href="#" aria-label="3D Neon Logo">
+            <img src="https://images.unsplash.com/photo-1611162618071-b39a2ec2cfb3?q=80&w=1200&auto=format&fit=crop" alt="3D Logo Design" class="w-full h-64 object-cover"/>
+            <div class="portfolio-overlay"></div>
+            <div class="absolute bottom-0 left-0 right-0 p-4">
+              <div class="flex items-center justify-between">
+                <div class="font-semibold">3D Neon Logo</div>
+                <span class="tag">Logo</span>
+              </div>
+            </div>
+          </a>
+          <a class="portfolio-item group" data-cat="thumb" href="#" aria-label="CTR Thumbnail">
+            <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=1200&auto=format&fit=crop" alt="YouTube Thumbnail" class="w-full h-64 object-cover"/>
+            <div class="portfolio-overlay"></div>
+            <div class="absolute bottom-0 left-0 right-0 p-4">
+              <div class="flex items-center justify-between">
+                <div class="font-semibold">CTR Thumbnail</div>
+                <span class="tag">Thumbnail</span>
+              </div>
+            </div>
+          </a>
+          <a class="portfolio-item group" data-cat="video" href="#" aria-label="AI Cinematic Reel">
+            <img src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?q=80&w=1200&auto=format&fit=crop" alt="AI Video" class="w-full h-64 object-cover"/>
+            <div class="portfolio-overlay"></div>
+            <div class="absolute bottom-0 left-0 right-0 p-4">
+              <div class="flex items-center justify-between">
+                <div class="font-semibold">AI Cinematic Reel</div>
+                <span class="tag">Video</span>
+              </div>
+            </div>
+          </a>
+          <a class="portfolio-item group" data-cat="photo" href="#" aria-label="Color Grade FX">
+            <img src="ht
